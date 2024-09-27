@@ -36,6 +36,7 @@ const TransferControls = ({
 const ControlButton = ({ handleTransfer, direction }) => {
   return (
     <button
+      data-testid={`transfer-${direction}`}
       className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center transition-all duration-250 hover:bg-gray-100"
       onClick={handleTransfer}
     >

@@ -17,19 +17,28 @@ const TransferList = () => {
 
   return (
     <>
-      <h1 className="text-3xl font-bold text-gray-900 mt-0 mb-12">
+      <h1
+        data-testid="transfer-list-title"
+        className="text-3xl font-bold text-gray-900 mt-0 mb-12"
+      >
         Transfer List
       </h1>
       <div className="flex justify-center gap-12">
-        <SingleList list={leftList} setList={setLeftList} />
-        <TransferControls
-          handleTransfer={handleTransfer}
-          leftList={leftList}
-          setLeftList={setLeftList}
-          rightList={rightList}
-          setRightList={setRightList}
-        />
-        <SingleList list={rightList} setList={setRightList} />
+        <div data-testid="left-list-container">
+          <SingleList list={leftList} setList={setLeftList} />
+        </div>
+        <div data-testid="transfer-controls-container">
+          <TransferControls
+            handleTransfer={handleTransfer}
+            leftList={leftList}
+            setLeftList={setLeftList}
+            rightList={rightList}
+            setRightList={setRightList}
+          />
+        </div>
+        <div data-testid="right-list-container">
+          <SingleList list={rightList} setList={setRightList} />
+        </div>
       </div>
     </>
   );

@@ -8,7 +8,10 @@ const SingleList = ({ list, setList }) => {
   };
 
   return (
-    <div className="flex flex-col gap-4 border border-gray-300 rounded-md p-4 w-64 h-96 overflow-y-auto">
+    <div
+      data-testid="single-list"
+      className="flex flex-col gap-4 border border-gray-300 rounded-md p-4 w-64 h-96 overflow-y-auto"
+    >
       {list.map((item) => (
         <ListItem key={item.id} item={item} handleCheck={handleCheck} />
       ))}
